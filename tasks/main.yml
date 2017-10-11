@@ -1,4 +1,14 @@
 ---
+- name: check for short-circuit
+  raw: "> /dev/null command -v sendmail;"
+  register: installed
+  ignore_errors: True
+  changed_when: False
+
+- name: set should_run fact
+  set_fact:
+    should_run: "{{installed|failed or not sendmail_should_shortcircuit}}"
+
 - include: compat.yml
 
 - include: include_vars.yml
