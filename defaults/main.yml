@@ -1,0 +1,2 @@
+---
+sendmail_should_shortcircuit: True
