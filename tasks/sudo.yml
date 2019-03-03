@@ -1,0 +1,3 @@
+---
+- include: compat_sudo.yml
+- include: install_package_names_sudo.yml
